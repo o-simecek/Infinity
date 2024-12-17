@@ -4,7 +4,7 @@ let SEPARATION_DISTANCE = 900
 let AGENT_SIZE = 8
 let SEPARATION_DAMPENING = 50 //lower number -> more separation
 let sep_damp_offset = 0
-let SUN_SIZE = 30
+let SUN_SIZE = 40
 let RING_MIN = 200
 let RING_MAX = 600
 let LIFESPAN_AVG = 80000
@@ -104,7 +104,7 @@ function draw() {
   circle(height/2, width/2, 400)*/
   
   
-  //console.log(frameRate())
+  console.log(frameRate())
 }
 
 class Agent {

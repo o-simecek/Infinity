@@ -5,18 +5,18 @@ let AGENT_SIZE = 8
 let SEPARATION_DAMPENING = 50 //lower number -> more separation
 let sep_damp_offset = 0
 let SUN_SIZE = 30
-let RING_MIN = 150
-let RING_MAX = 400
+let RING_MIN = 200
+let RING_MAX = 600
 let LIFESPAN_AVG = 80000
 let LIFESPAN_STD = 20000
 
 function setup() {
-  createCanvas(1280, 720);
+  createCanvas(1920, 1080);
   colorMode(HSB)
   
   background(250, 15, 15);
   
-  for (let i = 0; i < 500; i++) {
+  for (let i = 0; i < 700; i++) {
     //agents.push(new Agent(random(TWO_PI), random(RING_MIN, RING_MAX), 
     //                      color(random(15, 70), random(10, 50), 95)))
     //agents.push(new Agent(random(TWO_PI), random(RING_MIN, RING_MAX), 
@@ -88,8 +88,8 @@ function draw() {
       let distance = distSq(agent.x, agent.y, other.x, other.y)
       
       if (distance < SEPARATION_DISTANCE) {
-        //agent.rVel += (agent.r - other.r) / ((SEPARATION_DAMPENING-sin(millis()/1000)*35)*SEPARATION_DISTANCE/distance)
-        agent.rVel += (agent.r - other.r) / (SEPARATION_DAMPENING*SEPARATION_DISTANCE/distance)
+        agent.rVel += (agent.r - other.r) / ((SEPARATION_DAMPENING-sin(millis()/10000)*30)*SEPARATION_DISTANCE/distance)
+        //agent.rVel += (agent.r - other.r) / (SEPARATION_DAMPENING*SEPARATION_DISTANCE/distance)
         agent.aVel += (agent.a - other.a) / (1000*SEPARATION_DISTANCE)
         
       }

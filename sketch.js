@@ -34,7 +34,7 @@ function setup() {
 }
 
 function draw() {
-  background(250, 15, 15, 0.05);
+  background(250, 15, 15, 0.06);
   
   translate(width/2, height/2)
 
@@ -104,7 +104,7 @@ function draw() {
   circle(height/2, width/2, 400)*/
   
   
-  console.log(frameRate())
+  //console.log(frameRate())
 }
 
 class Agent {
